@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test scroll on elements</title>
+    <script type="text/javascript" src="../libs/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../src/jquery-ajax-scroll.js"></script>
+</head>
+<body>
+<div>
+    Scrolling on paragraph
+</div>
+<p id="largeP" style="height: 200px;overflow: scroll"></p>
+
+<div>
+    Scrolling on div
+</div>
+<div id="largeDiv" style="height: 200px;overflow: scroll"></div>
+
+<script type="text/javascript">
+    $(document).ready(function(e){
+        for(var i=0;i<20;i++){
+            $('#largeP').append("<div>TEXT</div>");
+            $('#largeDiv').append("<div>TEXT</div>");
+
+        }
+    });
+
+    var settingsP = {
+        handleScroll:function (page) {
+            $('#largeP').append("Appending data for page:" + page + "<div>TEXT TEXT TEXT<div>");
+        },
+        pagesToScroll : 5,
+        step:'20',
+        useScrollOptimization:false
+
+    };
+
+    var settingsDiv = {
+        handleScroll:function (page) {
+            $('#largeDiv').append("Appending data for page:" + page + "<div>TEXT TEXT TEXT<div>");
+        },
+//        pagesToScroll : 5,
+        step:'50',
+        loader:'<div class="loader"></div>'
+
+    };
+
+    $('#largeDiv').ajax_scroll(settingsDiv);
+    $('#largeP').ajax_scroll(settingsP);
+
+</script>
+
+
+</body>
+</html>
