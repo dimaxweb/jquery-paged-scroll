@@ -1,4 +1,4 @@
-# Simple plugin  for scrolling results ajax results
+# Simple plugin  for scrolling results ajax results - DEVELOPMENT in progress please don't use
 
 Listen and react for scrolling
 
