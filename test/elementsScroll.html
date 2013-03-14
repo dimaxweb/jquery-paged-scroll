@@ -3,7 +3,7 @@
 <head>
     <title>Test scroll on elements</title>
     <script type="text/javascript" src="../libs/jquery/jquery.js"></script>
-    <script type="text/javascript" src="../src/jquery-ajax-scroll.js"></script>
+    <script type="text/javascript" src="../src/jquery-paged-scroll.js"></script>
 </head>
 <body>
 <div>
@@ -30,8 +30,8 @@
             $('#largeP').append("Appending data for page:" + page + "<div>TEXT TEXT TEXT<div>");
         },
         pagesToScroll : 5,
-        step:'20',
-        useScrollOptimization:false
+        triggerFromBottom:'20'
+
 
     };
 
@@ -40,7 +40,7 @@
             $('#largeDiv').append("Appending data for page:" + page + "<div>TEXT TEXT TEXT<div>");
         },
 //        pagesToScroll : 5,
-        step:'50',
+        triggerFromBottom:'50',
         loader:'<div class="loader"></div>'
 
     };

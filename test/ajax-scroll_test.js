@@ -22,7 +22,7 @@
       raises(block, [expected], [message])
   */
 
-  module('jQuery#awesome', {
+  module('jQuery paged ', {
     setup: function() {
       this.elems = $('#qunit-fixture').children();
     }

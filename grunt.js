@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    pkg: '<json:ajax-scroll.jquery.json>',
+    pkg: '<json:jquery-paged-scroll.json>',
     meta: {
       banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
         '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
@@ -19,8 +19,8 @@ module.exports = function(grunt) {
     },
     min: {
       dist: {
-        src: 'src/ajax-scroll.js',
-        dest: 'dist/ajax-scroll.min.js'
+        src: 'src/jquery-paged-scroll.js',
+        dest: 'dist/jquery-paged-scroll.min.js'
       }
     },
     qunit: {

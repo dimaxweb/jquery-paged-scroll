@@ -3,7 +3,7 @@
 <head>
     <title>Test scroll on window </title>
     <script type="text/javascript" src="../libs/jquery/jquery.js"></script>
-    <script type="text/javascript" src="../src/jquery-ajax-scroll.js"></script>
+    <script type="text/javascript" src="../src/jquery-paged-scroll.js"></script>
 </head>
 <body>
        <div id="largeData"></div>
@@ -22,7 +22,7 @@
         },
         // Uncomment to enable infinite scroll
         //pagesToScroll : 5,
-        step:'5%',
+        triggerFromBottom:'5%',
         loader:'<div class="loader"></div>',
         pagesToScroll: 120
 
