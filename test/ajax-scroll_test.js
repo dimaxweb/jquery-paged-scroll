@@ -22,6 +22,10 @@
       raises(block, [expected], [message])
   */
 
+    //TODO : create scroll simulator function helper,data generator helper
+
+
+
   module('jQuery paged ', {
     setup: function() {
       this.elems = $('#qunit-fixture').children();

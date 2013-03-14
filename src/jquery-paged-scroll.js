@@ -9,11 +9,11 @@
 /*
 
  TODO : qunit ,simulate scroll - http://stackoverflow.com/questions/6761659/simulate-scroll-event-using-javascript
- TODO  : parameters validation  - step.
+ TODO  : parameters validation  - step and target are required.
  TODO : think about  giving option of calculating trigger on last element of the binder.
  TODO : make order in package.json
  TODO  : create page with examples,aka demo page in github.
- TODO  :  check bug with scrolling in elements why not called callback.
+ TODO  :  check bug with scrolling in elements why not called callback ?
 
  */
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # jquery-paged-scroll  - different approach for infinite scroll.
+=======
+# Simple plugin  for scrolling results ajax results - DEVELOPMENT in progress please don't use
+>>>>>>> 9a4b44440317852f0e3b02aa7e7993e0e156371f
 
 ## Inspiration
 Today we have a couple of good jquery "infinite scroll" plugins ,so why I wrote another one ?
