@@ -1,17 +1,13 @@
-<<<<<<< HEAD
 # jquery-paged-scroll  - different approach for infinite scroll.
-=======
-# Simple plugin  for scrolling results ajax results - DEVELOPMENT in progress please don't use
->>>>>>> 9a4b44440317852f0e3b02aa7e7993e0e156371f
 
 ## Inspiration
 Today we have a couple of good jquery "infinite scroll" plugins ,so why I wrote another one ?
-
-### Using different approach
+###Different approach - for different use case
 Most of existing plugins rely on the fact that you already have some numeric paging implemented in order to query it through provided selector for current,next and previous page and loading this page inside some element or calling callback.
 For [my project](www.keentour.com) such approach was overhead, because I wanted only to display paged result set,(json returned from public youtube and flickr api's) using the "infinite scroll" interaction design pattern,where plugin will be responsible for calculation of current page according to scroll progress.
+I think the plugin will help to easily adopt infinite scroll especially in cases  when working with paged result retrieved through ajax call.
 
-###Prefomance tweaks
+###Perfomance
 Performance optimizations -  attaching the handlers to scroll event need to be handled carefully by developer,because it can easily take the browser down.
 Don't believe me ? Just take a look on the  [John Resig article](http://ejohn.org/blog/learning-from-twitter),where he explains how Twitter became unusable because of primitive handling of scroll event.
 
@@ -21,8 +17,8 @@ Support for multiple plugins on the page listening on the scroll event of the sa
 On the page we can see 2 tabs ("Videos" and "Photos"),each tab subscribes to window scroll event via the plugin and provides the callback ,but only the the callback of "visible" tab is called.
 
 ### Scroll inside element
-Support scrolling inside different elements,not only window  scroll.
-div,p,iframe -  are tested.
+Support scrolling inside different elements,not only window scroll.
+div,p,iframe -  are supported for now.
 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
