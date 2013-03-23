@@ -13,17 +13,18 @@ Don't believe me ? Just take a look on the  [John Resig article](http://ejohn.or
 
 ### Multiple plugin instances
 Support for multiple plugins on the page listening on the scroll event of the same element,but preserving their own pagination state.
-[Example](http://www.keentour.com/content/North-America/United-States/New-York)
-On the page we can see 2 tabs ("Videos" and "Photos"),each tab subscribes to window scroll event via the plugin and provides the callback ,but only the the callback of "visible" tab is called.
+Look on  this [example](http://www.keentour.com/content/North-America/United-States/New-York):
+We can see 2 tabs ("Videos" and "Photos"),code responsible for tab functionality subscribes to window scroll event via the plugin and provides the callback ,but only the the callback of "visible" tab is called.
 
 ### Scroll inside element
 Support scrolling inside different elements,not only window scroll.
-div,p,iframe -  are supported for now.
+div,p,iframe -  are supported and tested.
 
 ## Getting Started
-Download the [production version][min] or the [development version][max].
-[min]: https://raw.github.com//jquery-ajax-scroll/master/dist/ajax-scroll.min.js
-[max]: https://raw.github.com//jquery-ajax-scroll/master/dist/jquery-ajax-scroll.js
+Download the [production][min] or  [development version][max].
+[min]: https://raw.github.com//jquery-ajax-scroll/master/dist/jquery-paged-scroll.min.js
+[max]: https://raw.github.com//jquery-ajax-scroll/master/dist/jquery-paged-scroll.js
+xa
 
 ## Documentation
 ### Options :
@@ -72,5 +73,8 @@ $('.selector').pagedScroll{
 ## Examples
 _(Coming soon)_
 
-## Release History
-_(Nothing yet)_
+## Coming soon
+Support for horizontal scroll
+
+
+

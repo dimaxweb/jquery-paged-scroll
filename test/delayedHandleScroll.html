@@ -3,7 +3,7 @@
 <head>
     <title>Simulate delay when callback returned,like it can be when asynchronous ajax request called from callback</title>
     <script type="text/javascript" src="../libs/jquery/jquery.js"></script>
-    <script type="text/javascript" src="../src/jquery-ajax-scroll.js"></script>
+    <script type="text/javascript" src="../src/jquery-paged-scroll.js"></script>
 </head>
 <body>
 <div id="largeData"></div>
@@ -24,7 +24,9 @@
         //pagesToScroll : 5,
         triggerFromBottom:'5%',
         loader:'<div class="loader"></div>',
-        pagesToScroll: 120
+        pagesToScroll: 120,
+        targetElement :  $('#largeData'),
+        debug : true
 
     });
 

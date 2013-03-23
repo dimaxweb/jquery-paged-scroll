@@ -19,34 +19,44 @@
 <script type="text/javascript">
     $(document).ready(function(e){
         for(var i=0;i<20;i++){
-            $('#largeP').append("<div>TEXT</div>");
-            $('#largeDiv').append("<div>TEXT</div>");
+            $('#largeP').append("<div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div>");
+            $('#largeDiv').append("<div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div>");
 
         }
     });
 
     var settingsP = {
         handleScroll:function (page) {
-            $('#largeP').append("Appending data for page:" + page + "<div>TEXT TEXT TEXT<div>");
+            $('#largeP').append("Appending data for page:" + page + "<div>TEXT TEXT TEXT<div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div>");
+            console.log("Paragraph scrolled to page",page);
         },
         pagesToScroll : 5,
-        triggerFromBottom:'20'
+        triggerFromBottom:'20',
+        debug  : true,
+        targetElement : $('#largeP')
+
 
 
     };
 
     var settingsDiv = {
-        handleScroll:function (page) {
+        handleScroll:function (page,container,doneCallback) {
             $('#largeDiv').append("Appending data for page:" + page + "<div>TEXT TEXT TEXT<div>");
+            console.log("DIV scrolled to page",page);
+
         },
 //        pagesToScroll : 5,
         triggerFromBottom:'50',
-        loader:'<div class="loader"></div>'
+        loader:'<div class="loader"></div>',
+        debug  : true,
+        targetElement : $('#largeDiv')
+
 
     };
 
-    $('#largeDiv').ajax_scroll(settingsDiv);
     $('#largeP').ajax_scroll(settingsP);
+    $('#largeDiv').ajax_scroll(settingsDiv);
+
 
 </script>
 
