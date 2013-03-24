@@ -7,15 +7,15 @@
  */
 
 /*
-
+ TODO  : loading html ,position options and provide some nice default.
+ TODO  : option to disable scroll   :http://stackoverflow.com/questions/3656592/how-to-programmatically-disable-page-scrolling-with-jquery
+ TODO  : handle horizontal scroll also.
+ TODO  : create page with examples,aka demo page in github.
  TODO :  qunit ,simulate scroll - http://stackoverflow.com/questions/6761659/simulate-scroll-event-using-javascript
  TODO :  think about  giving option of calculating trigger on last element of the binder,may be use way points plugin.
- TODO  : create page with examples,aka demo page in github.
- TODO  : check bug with scrolling in elements why not called callback.
  TODO  : think about disabling scroll until targetHtml is changed or callback called.
- TODO  : loading html ,position options and provide some nice default.
- TODO  : handle horizontal scroll also.
- TODO : provide custom selector.
+
+
 
  */
 
