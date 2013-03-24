@@ -279,7 +279,7 @@
     $.fn.ajax_scroll = function (options) {
         return this.each(function () {
             var instance = new $.ajax_scroll(this, options);
-            var n = 0;
+            $.data(this, 'jqueryPagedScroll', instance);
         });
     };
 
