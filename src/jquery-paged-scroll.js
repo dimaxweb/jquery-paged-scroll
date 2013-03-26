@@ -274,6 +274,10 @@
          borrowed from  paul irish infinite scroll : hhttps://github.com/paulirish/infinite-scroll - make use of console safe
          */
         _debug:function () {
+            try
+            {
+
+
             if (!this.settings.debug) {
                 return;
             }
@@ -291,6 +295,13 @@
                 Function.prototype.call.call(console.log, console, Array.prototype.slice.call(arguments));
             }
         }
+        catch(e){
+
+        }
+
+
+        }
+
 
 
     };
