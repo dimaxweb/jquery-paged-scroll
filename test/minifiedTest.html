@@ -3,7 +3,7 @@
 <head>
     <title>Test scroll on window </title>
     <script type="text/javascript" src="../libs/jquery/jquery.js"></script>
-    <script type="text/javascript" src="../dist/ajax-scroll.min.js"></script>
+    <script type="text/javascript" src="../dist/jquery-paged-scroll.min.js"></script>
 </head>
 <body>
 <div id="largeData"></div>
@@ -15,7 +15,7 @@
         }
     });
 
-    $(window).ajax_scroll({
+    $(window).paged_scroll({
         handleScroll:function (page) {
             $('#largeData').append("Appending data for page:" +  page +  "<div>DATA DATA DATA</div><br><div>DATA</div><br><div>DATA</div><br>");
             return true;
@@ -23,9 +23,9 @@
         // Uncomment to enable infinite scroll
         //pagesToScroll : 5,
         triggerFromBottom:'5%',
-        loader:'<div class="loader"></div>',
+        loading:'<div class="loader">Loading...</div>',
         pagesToScroll: 120,
-        use
+        targetElement : $('#largeData')
 
     });
 

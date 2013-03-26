@@ -42,6 +42,7 @@
     var settingsDiv = {
         handleScroll:function (page,container,doneCallback) {
             $('#largeDiv').append("Appending data for page:" + page + "<div>TEXT TEXT TEXT<div>");
+            doneCallback();
             console.log("DIV scrolled to page",page);
 
         },
@@ -54,8 +55,8 @@
 
     };
 
-    $('#largeP').ajax_scroll(settingsP);
-    $('#largeDiv').ajax_scroll(settingsDiv);
+    $('#largeP').paged_scroll(settingsP);
+    $('#largeDiv').paged_scroll(settingsDiv);
 
 
 </script>

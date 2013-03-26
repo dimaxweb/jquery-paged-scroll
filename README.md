@@ -4,8 +4,8 @@
 Today we have a couple of good jquery "infinite scroll" plugins ,so why I wrote another one ?
 ###Different approach - for different use case
 Most of existing plugins rely on the fact that you already have some numeric paging implemented in order to query it through provided selector for current,next and previous page and loading this page inside some element or calling callback.
-For [my project](www.keentour.com) such approach was overhead, because I wanted only to display paged result set,(json returned from public youtube and flickr api's) using the "infinite scroll" interaction design pattern,where plugin will be responsible for calculation of current page according to scroll progress.
-I think the plugin will help to easily adopt infinite scroll especially in cases  when working with paged result retrieved through ajax call.
+For [my project](www.keentour.com) such approach was overhead, because I wanted only to display paged result set (json returned from public youtube and flickr api's) and get rid from current pagination  using the "infinite scroll" interaction design pattern,where plugin will be responsible for calculation of current page according to scroll progress,so functionality can be reused.
+I think the plugin will help to easily adopt infinite scroll  especially in cases when working with paged result retrieved through ajax call . Because of flexibility given by the fact that plugin just calling user callback ,also http POST can be used to retrieve results.
 
 ###Perfomance
 Performance optimizations -  attaching the handlers to scroll event need to be handled carefully by developer,because it can easily take the browser down.
@@ -24,8 +24,6 @@ div,p,iframe -  are supported and tested.
 Download the [production][min] or  [development version][max].
 [min]: https://raw.github.com//jquery-ajax-scroll/master/dist/jquery-paged-scroll.min.js
 [max]: https://raw.github.com//jquery-ajax-scroll/master/dist/jquery-paged-scroll.js
-xa
-
 ## Documentation
 ### Options :
 ```html
