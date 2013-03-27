@@ -8,15 +8,13 @@
 
 /*
  /* Finish now
- TODO  : option to disable scroll   : http://stackoverflow.com/questions/3656592/how-to-programmatically-disable-page-scrolling-with-jquery
- TODO  : handle horizontal scroll also.
- TODO  : create page with examples,aka demo page in github,find logo.
- /* Finish later
+ TODO  : create page with examples,aka demo page in github,find logo images.
+ TODO  : horizontal scroll.
+ TODO  : option to disable scroll
+/* Finish later
  TODO :  qunit ,simulate scroll - http://stackoverflow.com/questions/6761659/simulate-scroll-event-using-javascript
  TODO :  think about  giving option of calculating trigger on last element of the binder,may be use waypoints plugin.
  TODO  : think about disabling scroll until targetHtml is changed or callback called.
-
-
 
  */
 (function ($, window, document, undefined) {
@@ -44,6 +42,10 @@
         this.lastHtmlLength = $(this.settings.targetElement).html().length;
         this.instanceID = "paged_scroll" + Math.round(Math.random() * 9999999999);
         var $this = this;
+
+        /*
+            create on scroll event handler
+         */
         var scrollProcess = (function ($this) {
             return function () {
                 if ($this.settings.useScrollOptimization) {
@@ -199,6 +201,13 @@
             }
         },
 
+        _getScrollData:function ($, element, window, document, $this, settings) {
+            var elemHeight = parseFloat($(element).height()) , elemScroll = parseFloat($(element).scrollTop()),
+                isWindow = (element.self === window) , docHeight = isWindow ? parseFloat($(document).height()) : elemHeight,
+                step = docHeight / $this._calculateStep(settings);
+            return {elemHeight:elemHeight, elemScroll:elemScroll, isWindow:isWindow, docHeight:docHeight, step:step};
+        },
+
         /*
             plugin logic which check if we need to call the callback
         */
@@ -211,22 +220,28 @@
                 return;
             }
 
-            //check if callback is still in process
+            /*
+                check if callback is still in process
+             */
             if ($this.proccesingCallback) {
                 $this._debug("Processing callback.Exit...");
                 return;
             }
 
-            var elemHeight = parseFloat($(element).height()) , elemScroll = parseFloat($(element).scrollTop()),
-                isWindow = (element.self === window) , docHeight = isWindow ? parseFloat($(document).height()) : elemHeight,
-                step = docHeight / $this._calculateStep(settings);
-
-            $this._debug(["Elem height : ",elemHeight,".Elem scroll :",elemScroll,".Step is :",step, ".DocHeight :",docHeight,".Last element height:", $this.lastDocHeight].join(""));
-
-
 
             /*
-             calculate  window height + scroll  + step
+                get all scroll data in order to understand if we at requested scroll point
+            */
+            var scrollData = $this._getScrollData($, element, window, document, $this, settings);
+            var elemHeight = scrollData.elemHeight;
+            var elemScroll = scrollData.elemScroll;
+            var isWindow = scrollData.isWindow;
+            var docHeight = scrollData.docHeight;
+            var step = scrollData.step;
+
+            $this._debug(["Elem height : ", elemHeight, ".Elem scroll :", elemScroll, ".Step is :", step, ".DocHeight :", docHeight, ".Last element height:", $this.lastDocHeight].join(""));
+             /*
+                calculate  window height + scroll  + step
              */
             var position = isWindow ? elemHeight + elemScroll + step : elemScroll + step;
             $this._debug("Position:" + position + ".Last position:" + $this.lastScrollPosition + ".Last element height:" + $this.lastDocHeight);
@@ -249,20 +264,18 @@
                     this.lastDocHeight = docHeight;
                     settings.startPage = settings.startPage + 1;
                     settings.beforePageChanged(settings.startPage, element);
-                        $this._debug("Calling 'handleScroll' callback");
-                        $this.proccesingCallback = true;
-                        var loadingHtml = $($this.settings.loading.html).appendTo($($this.settings.targetElement));
-                        $this.lastHtmlLength  = $(settings.targetElement).html().length;
-                        settings.handleScroll(settings.startPage, element, function () {
-                            $this._debug("Callback done.");
-                            $this.proccesingCallback = false;
-                            loadingHtml.hide();
-                        });
+                    $this._debug("Calling 'handleScroll' callback");
+                    $this.proccesingCallback = true;
+                    var loadingHtml = $($this.settings.loading.html).appendTo($($this.settings.targetElement));
+                    $this.lastHtmlLength = $(settings.targetElement).html().length;
+                    settings.handleScroll(settings.startPage, element, function () {
+                        $this._debug("Callback done.");
+                        $this.proccesingCallback = false;
+                        loadingHtml.hide();
+                    });
 
-                        $this._checkCallbackDone.call($this,$this.settings,loadingHtml);
-                        settings.afterPageChanged(settings.startPage, element);
-
-
+                    $this._checkCallbackDone.call($this, $this.settings, loadingHtml);
+                    settings.afterPageChanged(settings.startPage, element);
 
 
                 }

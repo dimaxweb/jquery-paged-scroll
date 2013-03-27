@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test of horizontal scroll</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test scroll on window </title>
+    <script type="text/javascript" src="../libs/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../src/jquery-paged-scroll.js"></script>
+</head>
+<body>
+<div id="largeData"></div>
+<script type="text/javascript">
+    $(document).ready(function(e){
+        for(var i=0;i<50;i++){
+            $('#largeData').append("<span>Test</span>");
+        }
+    });
+
+    $(window).paged_scroll({
+        handleScroll:function (page,container,doneCallback) {
+            $('#largeData').append("Appending data for page:" +  page +  "<span>DATA DATA DATA</span>");
+            //doneCallback();
+            return true;
+        },
+        // Uncomment to enable infinite scroll
+        //pagesToScroll : 5,
+        triggerFromBottom:'50',
+        loader:'<div class="loader"></div>',
+        debug  : true,
+        targetElement : $('#largeData')
+
+    });
+
+</script>
+
+
+</body>
+</html>
+</body>
+</html>
