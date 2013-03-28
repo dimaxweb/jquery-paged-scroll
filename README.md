@@ -22,8 +22,8 @@ div,p,iframe -  are supported and tested for now.
 
 ## Getting Started
 Download the [production][min] or  [development version][max].
-[min]: https://raw.github.com//jquery-ajax-scroll/master/dist/jquery-paged-scroll.min.js
-[max]: https://raw.github.com//jquery-ajax-scroll/master/dist/jquery-paged-scroll.js
+[min]: https://github.com/dimaxweb/jquery-paged-scroll/blob/master/dist/jquery-paged-scroll.min.js
+[max]: https://github.com/dimaxweb/jquery-paged-scroll/blob/master/src/jquery-paged-scroll.js
 ## Documentation
 ### Options :
 ```html
@@ -141,8 +141,8 @@ $(window).paged_scroll({
 The plugin API is quite simple and described above,but please take to your attention  :
 Plugin provides maximum flexibility in implementing callback ,but also need to know when your callback logic is in in progress and when done in order to ignore additional onscroll events which can occur.
 Plugin has 2 approaches to accomplish that :
-1.Monitor the targetElement html and resume when changed.Enabled by default,you can disable it by providing : monitorTargetChange : false ,but then you need to use second approach.
-2.Callback function has parameter doneCallback which is passed to user code and you can just call it without any parameter to signal us you logic is done.
+- Monitor the targetElement html and resume when changed.Enabled by default,you can disable it by providing : monitorTargetChange : false ,but then you need to use second approach.
+- Callback function has parameter doneCallback which is passed to user code and you can just call it without any parameter to signal us you logic is done.
 
 
 ## Coming soon
