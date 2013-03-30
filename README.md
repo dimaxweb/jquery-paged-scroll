@@ -136,6 +136,49 @@ $(window).paged_scroll({
     });
 ```
 
+```html
+//Scroll on DOM element supported
+//Call handleScroll function each time user scrolls reach the position  which equals to  : 10% of the target element.Infinite scroll because pagesToScroll is not specified.
+// Your logic will insert newly generated html to $('#element') DOM element.
+$('#element').paged_scroll({
+        handleScroll:function (page,container,doneCallback) {
+            yourLogic.getData(function(data){
+              var html = yourLogic.parseData(data);
+              $('#element').append(html);
+            });
+
+
+        },
+        triggerFromBottom:'10%',
+        targetElement : $('#element')
+        loader:'<div class="loader">Loading next page ...</div>'
+
+    });
+```
+
+```html
+
+//Your don't want that plugin will monitor the change of targetElement and prefer to signal that content is loaded by calling  doneCallback().
+$('#element').paged_scroll({
+        handleScroll:function (page,container,doneCallback) {
+            yourLogic.getData(function(data){
+              var html = yourLogic.parseData(data);
+              $('#element').append(html);
+              doneCallback();
+            });
+
+
+        },
+        triggerFromBottom:'10%',
+        targetElement : $('#element')
+        loader:'<div class="loader">Loading next page ...</div>',
+        pagesToScroll: yourLogic.totalNumberOfPages,
+        monitorTargetChange : false
+
+
+    });
+```
+
 
 ## Documentation
 The plugin API is quite simple and described above,but please take to your attention  :
