@@ -1,10 +1,10 @@
-# jquery-paged-scroll  - different approach for infinite scroll.
+# jquery-paged-scroll  - different approach for infinite scroll.Replace your old pagination easily.
 
 ## Inspiration
 Today we have a couple of good jquery "infinite scroll" plugins ,so why I wrote another one ?
-###Different approach - for different use case
+###Different approach - for different use case.
 Most of existing plugins rely on the fact that you already have some numeric paging implemented in order to query it through provided selector for current,next and previous page and loading this page inside some element or calling callback.
-For [my project](www.keentour.com) such approach was overhead, because I wanted only to display paged result set (json returned from public youtube and flickr api's) and get rid from current pagination  using the "infinite scroll" interaction design pattern,where plugin will be responsible for calculation of current page according to scroll progress,so functionality can be reused.
+For [my project](www.keentour.com) such approach was overhead, because I wanted only to display paged result set (json returned from public youtube and flickr api's) and replace current pagination using the "infinite scroll" interaction design pattern,where plugin will be responsible for calculation of current page according to scroll progress,so functionality can be reused.
 I think the plugin will help to easily adopt infinite scroll  especially in cases when working with paged result retrieved through ajax call . Because of flexibility given by the fact that plugin just calling user callback ,also http POST can be used to retrieve results.
 
 ###Perfomance
@@ -17,7 +17,7 @@ Look on  this [example](http://www.keentour.com/content/North-America/United-Sta
 We can see 2 tabs ("Videos" and "Photos"),code responsible for tab functionality subscribes to window scroll event via the plugin and provides the callback ,but only the the callback of "visible" tab is called.
 
 ### Scroll inside element
-Support scrolling inside different elements,not only window scroll.
+Support scrolling on different elements,not only window scroll.
 div,p,iframe -  are supported and tested for now.
 
 ## Getting Started
