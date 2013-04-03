@@ -48,7 +48,7 @@
 For <a href="www.keentour.com">my project</a> such approach was overhead, because I wanted only to display paged result set (json returned from public youtube and flickr api's) and replace current pagination using the "infinite scroll" interaction design pattern,where plugin will be responsible for calculation of current page according to scroll progress,so functionality can be reused.
 I think the plugin will help to easily adopt infinite scroll  especially in cases when working with paged result retrieved through ajax call . Because of flexibility given by the fact that plugin just calling user callback ,also http POST can be used to retrieve results.</p>
 
-<h3>Perfomance</h3>
+<h3>Performance</h3>
 
 <p>Performance optimizations -  attaching the handlers to scroll event need to be handled carefully by developer,because it can easily take the browser down.
 Don't believe me ? Just take a look on the  <a href="http://ejohn.org/blog/learning-from-twitter">John Resig article</a>,where he explains how Twitter became unusable because of primitive handling of scroll event.</p>
@@ -62,7 +62,18 @@ We can see 2 tabs ("Videos" and "Photos"),code responsible for tab functionality
 <h3>Scroll inside element</h3>
 
 <p>Support scrolling on different elements,not only window scroll.
-div,p,iframe -  are supported and tested for now.</p>
+div,p -  are supported and tested for now.</p>
+
+<h2>Demo: </h2>
+<a href="http://www.keentour.com/content/North-America">Real world example</a>.KeenTour Travel startup  -  uses plugin  to navigate through videos and photos using infinite scroll pattern.
+<h3>Playground: </h3>
+Examples to play with.
+<div><b>debug</b> option enabled.</div>
+<a href="window.html">Scroll on window</a>
+<a href="elements.html">Scroll inside element</a>
+
+
+
 
 <h2>Getting Started</h2>
 
