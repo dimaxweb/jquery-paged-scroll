@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scrolling on elements</title>
+    <script type="text/javascript" src="../libs/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../src/jquery-paged-scroll.js"></script>
+</head>
+<body>
+
+<div id="containerDiv">
+    <h1>Scroll inside the div and paragraph to see data appended and callback is called with next page number</h1>
+</div>
+
+<div>
+    Scrolling on paragraph
+</div>
+<p id="largeP" style="height: 200px;overflow: scroll"></p>
+
+<div>
+    Scrolling on div
+</div>
+<div id="largeDiv" style="height: 200px;overflow: scroll"></div>
+
+<script type="text/javascript">
+    $(document).ready(function(e){
+        for(var i=0;i<20;i++){
+            $('#largeP').append("<div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div>");
+            $('#largeDiv').append("<div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div>");
+
+        }
+    });
+
+    var settingsP = {
+        handleScroll:function (page) {
+            setTimeout(function () {
+                $('#largeP').append("Appending data for page:" + page + "<div>TEXT TEXT TEXT<div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div>");
+            },2000);
+            console.log("Paragraph scrolled to page",page);
+        },
+        pagesToScroll : 5,
+        triggerFromBottom:'20',
+        debug  : true,
+        targetElement : $('#largeP')
+
+
+
+    };
+
+    var settingsDiv = {
+        handleScroll:function (page,container,doneCallback) {
+            setTimeout(function () {
+                $('#largeDiv').append("Appending data for page:" + page + "<div>TEXT TEXT TEXT<div>");
+                doneCallback();
+                console.log("DIV scrolled to page",page);
+            },2000);
+
+        },
+//        pagesToScroll : 5,
+        triggerFromBottom:'50',
+        loader:'<div class="loader"></div>',
+        debug  : true,
+        targetElement : $('#largeDiv'),
+        monitorTargetChange:false
+
+
+    };
+
+    $('#largeP').paged_scroll(settingsP);
+    $('#largeDiv').paged_scroll(settingsDiv);
+
+
+</script>
+
+
+</body>
+</html>
