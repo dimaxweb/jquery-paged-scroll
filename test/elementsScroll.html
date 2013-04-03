@@ -6,6 +6,11 @@
     <script type="text/javascript" src="../src/jquery-paged-scroll.js"></script>
 </head>
 <body>
+
+<div id="containerDiv">
+    <h1>Scroll inside the div and paragraph to see data appended and callback is called with next page number</h1>
+</div>
+
 <div>
     Scrolling on paragraph
 </div>
@@ -27,7 +32,9 @@
 
     var settingsP = {
         handleScroll:function (page) {
-            $('#largeP').append("Appending data for page:" + page + "<div>TEXT TEXT TEXT<div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div>");
+            setTimeout(function () {
+                $('#largeP').append("Appending data for page:" + page + "<div>TEXT TEXT TEXT<div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div><div>TEXT</div>");
+            },2000);
             console.log("Paragraph scrolled to page",page);
         },
         pagesToScroll : 5,
@@ -41,16 +48,19 @@
 
     var settingsDiv = {
         handleScroll:function (page,container,doneCallback) {
+            setTimeout(function () {
             $('#largeDiv').append("Appending data for page:" + page + "<div>TEXT TEXT TEXT<div>");
             doneCallback();
             console.log("DIV scrolled to page",page);
+            },2000);
 
         },
 //        pagesToScroll : 5,
         triggerFromBottom:'50',
         loader:'<div class="loader"></div>',
         debug  : true,
-        targetElement : $('#largeDiv')
+        targetElement : $('#largeDiv'),
+        monitorTargetChange:false
 
 
     };

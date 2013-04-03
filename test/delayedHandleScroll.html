@@ -7,6 +7,7 @@
     <script type="text/javascript" src="../src/jquery-paged-scroll.js"></script>
 </head>
 <body>
+<h1>Scroll to  the bottom to see pages are loaded</h1>
 <div id="largeData"></div>
 
 <script type="text/javascript">
@@ -22,7 +23,7 @@
                 console.log("Page is:", page);
                 $('#largeData').append("Appending data for page:" + page + "<div>DATA DATA DATA</div><br><div>DATA</div><br><div>DATA</div><br><div>DATA DATA DATA</div><br><div>DATA</div><br><div>DATA</div><br>");
 //                doneCallback();
-            }, 5000);
+            }, 1000);
 
             return true;
         },
