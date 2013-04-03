@@ -3,40 +3,40 @@
 <!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
-  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="javascripts/script.js"></script>
+    <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/script.js"></script>
 
-  <title>Jquery-paged-scroll</title>
-  <meta name="description" content="jQuery plugin for scrolling paged result set.  ">
+    <title>Jquery-paged-scroll</title>
+    <meta name="description" content="jQuery plugin for scrolling paged result set.  ">
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
 </head>
 
 <body>
 
-  <div class="wrapper">
-    <header>
-      <h1 class="title">Jquery-paged-scroll</h1>
-    </header>
-    <div id="container">
-      <p class="tagline">jQuery plugin for scrolling paged result set.  </p>
-      <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          <a href="https://github.com/dimaxweb/jquery-paged-scroll/tarball/master" class="download-button tar"><span>Download</span></a>
-          <a href="https://github.com/dimaxweb/jquery-paged-scroll/zipball/master" class="download-button zip"><span>Download</span></a>
-          <a href="https://github.com/dimaxweb/jquery-paged-scroll" class="code">View Jquery-paged-scroll on GitHub</a>
-        </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
-        <article class="markdown-body">
-          <h1>jquery-paged-scroll  - different approach for infinite scroll.Replace your old pagination easily.</h1>
+<div class="wrapper">
+<header>
+    <h1 class="title">Jquery-paged-scroll</h1>
+</header>
+<div id="container">
+<p class="tagline">jQuery plugin for scrolling paged result set.  </p>
+<div id="main" role="main">
+<div class="download-bar">
+    <div class="inner">
+        <a href="https://github.com/dimaxweb/jquery-paged-scroll/tarball/master" class="download-button tar"><span>Download</span></a>
+        <a href="https://github.com/dimaxweb/jquery-paged-scroll/zipball/master" class="download-button zip"><span>Download</span></a>
+        <a href="https://github.com/dimaxweb/jquery-paged-scroll" class="code">View Jquery-paged-scroll on GitHub</a>
+    </div>
+    <span class="blc"></span><span class="trc"></span>
+</div>
+<article class="markdown-body">
+<h1>jquery-paged-scroll  - different approach for infinite scroll.Replace your old pagination easily.</h1>
 
 <h2>Inspiration</h2>
 
@@ -45,24 +45,35 @@
 <h3>Different approach - for different use case.</h3>
 
 <p>Most of existing plugins rely on the fact that you already have some numeric paging implemented in order to query it through provided selector for current,next and previous page and loading this page inside some element or calling callback.
-For <a href="www.keentour.com">my project</a> such approach was overhead, because I wanted only to display paged result set (json returned from public youtube and flickr api's) and replace current pagination using the "infinite scroll" interaction design pattern,where plugin will be responsible for calculation of current page according to scroll progress,so functionality can be reused.
-I think the plugin will help to easily adopt infinite scroll  especially in cases when working with paged result retrieved through ajax call . Because of flexibility given by the fact that plugin just calling user callback ,also http POST can be used to retrieve results.</p>
+    For <a href="www.keentour.com">my project</a> such approach was overhead, because I wanted only to display paged result set (json returned from public youtube and flickr api's) and replace current pagination using the "infinite scroll" interaction design pattern,where plugin will be responsible for calculation of current page according to scroll progress,so functionality can be reused.
+    I think the plugin will help to easily adopt infinite scroll  especially in cases when working with paged result retrieved through ajax call . Because of flexibility given by the fact that plugin just calling user callback ,also http POST can be used to retrieve results.</p>
 
-<h3>Perfomance</h3>
+<h3>Performance</h3>
 
 <p>Performance optimizations -  attaching the handlers to scroll event need to be handled carefully by developer,because it can easily take the browser down.
-Don't believe me ? Just take a look on the  <a href="http://ejohn.org/blog/learning-from-twitter">John Resig article</a>,where he explains how Twitter became unusable because of primitive handling of scroll event.</p>
+    Don't believe me ? Just take a look on the  <a href="http://ejohn.org/blog/learning-from-twitter">John Resig article</a>,where he explains how Twitter became unusable because of primitive handling of scroll event.</p>
 
 <h3>Multiple plugin instances</h3>
 
 <p>Support for multiple plugins on the page listening on the scroll event of the same element,but preserving their own pagination state.
-Look on  this <a href="http://www.keentour.com/content/North-America/United-States/New-York">example</a>:
-We can see 2 tabs ("Videos" and "Photos"),code responsible for tab functionality subscribes to window scroll event via the plugin and provides the callback ,but only the the callback of "visible" tab is called.</p>
+    Look on  this <a href="http://www.keentour.com/content/North-America/United-States/New-York">example</a>:
+    We can see 2 tabs ("Videos" and "Photos"),code responsible for tab functionality subscribes to window scroll event via the plugin and provides the callback ,but only the the callback of "visible" tab is called.</p>
 
 <h3>Scroll inside element</h3>
 
 <p>Support scrolling on different elements,not only window scroll.
-div,p,iframe -  are supported and tested for now.</p>
+    div,p -  are supported and tested for now.</p>
+
+<h2>Demo: </h2>
+<a href="http://www.keentour.com/content/North-America">Real world example</a>.KeenTour Travel startup  -  uses plugin  to navigate through videos and photos using infinite scroll pattern.
+<h3>Playground: </h3>
+Examples to play with.
+<div><b>debug</b> option enabled.</div>
+<a href="window.html">Scroll on window</a>
+<a href="elements.html">Scroll inside element</a>
+
+
+
 
 <h2>Getting Started</h2>
 
@@ -225,35 +236,35 @@ $('#element').paged_scroll({
 <h2>Documentation</h2>
 
 <p>The plugin API is quite simple and described above,but please take to your attention  :
-Plugin provides maximum flexibility in implementing callback ,but also need to know when your callback logic is in in progress and when done in order to ignore additional onscroll events which can occur.
-Plugin has 2 approaches to accomplish that :</p>
+    Plugin provides maximum flexibility in implementing callback ,but also need to know when your callback logic is in in progress and when done in order to ignore additional onscroll events which can occur.
+    Plugin has 2 approaches to accomplish that :</p>
 
 <ul>
-<li>Monitor the targetElement html and resume when changed.Enabled by default,you can disable it by providing : monitorTargetChange : false ,but then you need to use second approach.</li>
-<li>Callback function has parameter doneCallback which is passed to user code and you can just call it without any parameter to signal us you logic is done.</li>
+    <li>Monitor the targetElement html and resume when changed.Enabled by default,you can disable it by providing : monitorTargetChange : false ,but then you need to use second approach.</li>
+    <li>Callback function has parameter doneCallback which is passed to user code and you can just call it without any parameter to signal us you logic is done.</li>
 </ul><h2>Coming soon</h2>
 
 <p>Support for horizontal scroll</p>
-        </article>
-      </div>
+</article>
+</div>
+</div>
+<footer>
+    <div class="owner">
+        <p><a href="https://github.com/dimaxweb" class="avatar"><img src="https://secure.gravatar.com/avatar/eeb3f5a7c77473d9c7e39de28292de46?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="48" height="48"/></a> <a href="https://github.com/dimaxweb">dimaxweb</a> maintains <a href="https://github.com/dimaxweb/jquery-paged-scroll">Jquery-paged-scroll</a></p>
+
+
     </div>
-    <footer>
-      <div class="owner">
-      <p><a href="https://github.com/dimaxweb" class="avatar"><img src="https://secure.gravatar.com/avatar/eeb3f5a7c77473d9c7e39de28292de46?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="48" height="48"/></a> <a href="https://github.com/dimaxweb">dimaxweb</a> maintains <a href="https://github.com/dimaxweb/jquery-paged-scroll">Jquery-paged-scroll</a></p>
-
-
-      </div>
-      <div class="creds">
+    <div class="creds">
         <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
+    </div>
+</footer>
+</div>
+<div class="current-section">
     <a href="#top">Scroll to top</a>
     <a href="https://github.com/dimaxweb/jquery-paged-scroll/tarball/master" class="tar">tar</a><a href="https://github.com/dimaxweb/jquery-paged-scroll/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
     <p class="name"></p>
-  </div>
+</div>
 
-  
+
 </body>
 </html>
