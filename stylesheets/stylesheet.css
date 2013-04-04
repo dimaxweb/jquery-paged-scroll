@@ -67,6 +67,12 @@ a:hover {
   color: #90D355;
 }
 
+code{
+    margin:0 20 0 20;
+    font-weight: bold;
+
+}
+
 h1.title {
   margin: 30px 20px 10px;
   font-size: 60px;
