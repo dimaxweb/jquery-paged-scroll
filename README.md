@@ -1,4 +1,4 @@
-# jquery-paged-scroll  - different approach for infinite scroll.Replace your old pagination easily.
+# jquery-paged-scroll  -  Facebook like infinite scroll jquery plugin.
 
 ## Inspiration
 Today we have a couple of good jquery "infinite scroll" plugins ,so why I wrote another one ?
