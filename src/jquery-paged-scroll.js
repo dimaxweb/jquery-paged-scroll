@@ -8,7 +8,6 @@
 
 /*
  /* Finish now
- TODO  : create page with examples,aka demo page in github,find logo images.
  TODO  : horizontal scroll.
  TODO  : option to disable scroll
 /* Finish later
@@ -127,7 +126,7 @@
 
         /*
          optional
-         after page scroll calback
+         after page scroll callback
          */
         afterPageChanged:function (page, container) {
             return true;
